@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            background: linear-gradient(136.62deg, #FFF1EB 0%, #ACE0F9 99.56%);
+            font-family: Arial, sans-serif;
+        }
+
+        .vendor-form-block {
+            max-width: 850px;
+            margin: 0 auto 60px;
+            background-color: #FFF;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .vendor-form-block input,
+        .vendor-form-block select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .vendor-form-block label {
+            font-weight: bold;
+        }
+
+        .vendor-form-block h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .vendor-form-block button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            text-transform: uppercase;
+            margin-top: 20px;
+        }
+
+        #thanks_div {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+
+    <script src="js/sales_template.js"></script>
+    <script src="js/config.js"></script>
+
+
+</head>
+
+<body style=" background: linear-gradient(136.62deg, #FFF1EB 0%, #ACE0F9 99.56%); " dir="ltr">
+<section class="vendor-form-block ">
+    <div class="container">
+        <t t-set="additional_title">
+            <h1 class="text-center"> Sales Order</h1>
+        </t>
+        <div id="form_content">
+        <form id="vendor-form">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="form-group col-xl-6">
+                            <label for="company-name-select">Customer:</label>
+                            <select id="company-name-select" name="company" class="form-control" required="required">
+                                <option value="">Select Company Name*</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-xl-6">
+                            <label for="sale_date_id">Order Date:</label>
+                            <input type="date" value="sale_date" id="sale_date_id" name="sale_date">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        </div>
+        <div style="display: none;" id="thanks_div">
+            <span>Thanks For Sale Order</span>
+        </div>
+        <div style="display: none;text-align: center;padding-top: 10px;color:red;" id="error_div">
+            <span>Something Went Wrong</span>
+        </div>
+
+    </div>
+</section>
+</body>
+</html>
